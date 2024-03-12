@@ -1,0 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahooghe <ahooghe@student.s19.be>           +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/10/18 22:32:11 by ahooghe           #+#    #+#              #
+#    Updated: 2023/10/19 17:34:35 by ahooghe          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME= fixed
+CPPC= c++
+CPPFLAGS= -Wall -Werror -Wextra
+SRC= Fixed.cpp Point.cpp bsp.cpp main.cpp
+
+all:
+	$(CPPC) $(CPPFLAGS) $(SRC) -o $(NAME)
+
+clean:
+	rm -f *.o
+
+fclean: clean
+		rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
